@@ -1,0 +1,10 @@
+{# templates/post/list.html.twig #}
+
+{% for post in posts %}
+    <div>
+        <p>{{ post.title }}</p>
+        <p>{{ post.body }}</p>
+        <!-- Delete Button -->
+        <a href="{{ path('delete_post', {'id': post.id}) }}">Delete</a>
+    </div>
+{% endfor %}

@@ -20,8 +20,8 @@ class Post
     #[ORM\Column(type: 'text')]
     private ?string $body;
 
-    #[ORM\ManyToOne(targetEntity: User::class)]
-    private ?User $user;
+    #[ORM\ManyToOne(targetEntity: Author::class)]
+    private ?Author $author;
 
     public function getId(): ?int
     {
@@ -59,14 +59,14 @@ class Post
         return $this;
     }
 
-    public function getUser(): ?User
+    public function getUser(): ?Author
     {
-        return $this->user;
+        return $this->author;
     }
 
-    public function setUser(?User $user): self
+    public function setAuthor(?Author $author): self
     {
-        $this->user = $user;
+        $this->author = $author;
 
         return $this;
     }
